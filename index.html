@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Lyrics</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    
+    <section id="main-content" class="container">
+            <div class="col-12">
+                    <div class="row justify-content-center">
+                        <form>
+                            <div class="row">
+                              <div class="col-md-5">
+                                <input type="text" id="artist" class="form-control mb-2 mr-sm-2" placeholder="Artist">
+                              </div>
+                              <div class="col-md-5">
+                                <input type="text" id="song" class="form-control mb-2 mr-sm-2" placeholder="Song">
+                              </div>
+                              <div class="col-md-2">
+                                  <button onclick="searchLyrics();" id="search" class="btn btn-outline-dark">search</button>
+                              </div>
+                            </div>
+                          </form>
+                    </div><br>
+                    <div class="row justify-content-center">
+                        <div class="col-md-2">
+                            <div class="row justify-content-center">
+                                <img  id="artistImg" class="img-fluid rounded">
+                            </div><br> 
+                            <div class="row justify-content-center">
+                                <p id="artistName"></p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <p id="artistSong"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row justify-content-center">
+                                <pre class="text-righ" id="lyrics">
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </section>
+
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="src/js/lyrics2.js"></script>
+</body>
+</html>
