@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find your Lyrics</title>
-    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="icon" type="image/png" href="src/img/note_favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
     
     <section id="main-content" class="container">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <h1 id='title'>Find Your Lyrics</h1>
+                </div>
+            </div>
             <div class="col-12">
                     <div class="row justify-content-center">
                         <form>
@@ -21,7 +28,7 @@
                                 <input type="text" id="song" class="form-control mb-2 mr-sm-2" placeholder="Song">
                               </div>
                               <div class="col-md-2">
-                                  <button onclick="searchLyrics();" id="search" class="btn btn-outline-dark">search</button>
+                                  <button id="search" class="btn btn-outline-dark">search</button>
                               </div>
                             </div>
                           </form>
@@ -49,9 +56,9 @@
     </section>
 
     
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="src/js/lyrics2.js"></script>
+    <script src="bootstrap/jquery/dist/jquery.js"></script>
+    <script src="bootstrap/popper.js/dist/umd/popper.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <script src="src/js/lyrics.js"></script>
 </body>
 </html>

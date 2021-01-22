@@ -1,13 +1,20 @@
 let artist = document.getElementById("artist")
-let songName = document.getElementById("song")
+let song = document.getElementById("song")
 let lyrics = document.getElementById('lyrics')
 let btn = document.getElementById('search')
+let title = document.getElementById('title')
+
 let key = '3a31cdecea93e5b4ff0b11d15337de8f'
+
+let artistName = document.getElementById('artistName')
+let artistSong = document.getElementById('artistSong')
+let artistImg = document.getElementById('artistImg')
 
 
 btn.onclick = function searchLyrics(e) {
     e.preventDefault()
-    const url = `https://api.vagalume.com.br/search.php?art=${artist.value}&mus=${songName.value}&extra=artpic&apikey={${key}}`
+    destroyLyrics()
+    const url = `https://api.vagalume.com.br/search.php?art=${artist.value}&mus=${song.value}&extra=artpic&apikey={${key}}`
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -23,12 +30,21 @@ btn.onclick = function searchLyrics(e) {
 }
 
 function buildLyricsContent(data_art_name,data_mus,data_art_pic_medium) {
-    document.getElementById('nameArtist').innerHTML = `Artist: ${data_art_name}`
-    document.getElementById('nameSong').innerHTML = `Song: ${data_mus[0].name}`
-    document.getElementById('artistImg').src = data_art_pic_medium
+    title.style.marginTop = '10px'
+    artistName.innerHTML = `Artist: ${data_art_name}`
+    artistSong.innerHTML = `Song: ${data_mus[0].name}`
+    artistImg.src = data_art_pic_medium
 
     
     lyrics.innerHTML = data_mus[0].text
     artist.value = ''
-    songName.value = ''
+    song.value = ''
+}
+
+function destroyLyrics() {
+    title.style.marginTop = '150px'
+    artistName.innerHTML = ''
+    artistSong.innerHTML = ''
+    artistImg.src = ''
+    lyrics.innerHTML = ''
 }
